@@ -1,0 +1,7 @@
+models:
+  - name: order_details
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null

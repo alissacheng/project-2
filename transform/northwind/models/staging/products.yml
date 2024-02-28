@@ -1,0 +1,18 @@
+models:
+  - name: products
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        tests:
+          - unique
+          - not_null
+      - name: unit_price
+        tests:
+          - not_null
+      - name: discontinued
+        tests:
+          - accepted_values:
+              values: [0, 1]

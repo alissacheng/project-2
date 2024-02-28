@@ -1,0 +1,10 @@
+models:
+  - name: customer_customer_demo
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_type_id
+        tests:
+          - not_null

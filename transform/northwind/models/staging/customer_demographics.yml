@@ -1,0 +1,7 @@
+models:
+  - name: customer_demographics
+    columns:
+      - name: customer_type_id
+        tests:
+          - unique
+          - not_null
