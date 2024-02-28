@@ -3,7 +3,7 @@ https://docs.airbyte.com/integrations/destinations/snowflake
 */
 -- STEP 1
 -- set variables (these need to be uppercase)
-set airbyte_role = 'AIRBYTE_ROLE';
+set airbyte_role = 'ACCOUNTADMIN';
 set airbyte_username = 'AIRBYTE_USER';
 set airbyte_warehouse = 'AIRBYTE_WAREHOUSE';
 set airbyte_database = 'AIRBYTE_DATABASE';

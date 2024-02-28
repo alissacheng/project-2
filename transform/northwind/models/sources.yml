@@ -4,9 +4,8 @@ sources:
   - name: northwind
     database: warehouse_northwind
     schema: raw
-   tables:
+    tables:
       - name: products
-      - name: suppliers
       - name: category
       - name: order_details
       - name: orders
@@ -15,7 +14,6 @@ sources:
       - name: customer_demographics
       - name: employees
       - name: employee_territories
-      - name: products
       - name: region
       - name: shippers
       - name: suppliers
