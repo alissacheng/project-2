@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: northwind
+    database: warehouse_northwind
+    schema: raw
+    tables:
+      - name: products
+      - name: category
+      - name: order_details
+      - name: orders
+      - name: customers
+      - name: customer_customer_demo
+      - name: customer_demographics
+      - name: employees
+      - name: employee_territories
+      - name: region
+      - name: shippers
+      - name: suppliers
+      - name: territories
+      - name: us_states
