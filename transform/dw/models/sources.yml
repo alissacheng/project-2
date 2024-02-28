@@ -1,8 +1,9 @@
 version: 2
 
 sources:
-  - name: dvd_rental
-    schema: '{{ target.schema }}'
+  - name: northwind
+    database: warehouse_northwind
+    schema: raw
     tables:
       - name: actor
         columns:
