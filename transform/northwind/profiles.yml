@@ -2,13 +2,10 @@ northwind:
   target: dev 
   outputs:
     dev:
-      # account: "{{ env_var('SNOWFLAKE_ACCOUNT_ID') }}"
-      account: de63389.ca-central-1.aws
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT_ID') }}"
       database: warehouse_northwind      
-      # user: '{{ env_var("SNOWFLAKE_USERNAME") }}'
-      # password: '{{ env_var("SNOWFLAKE_PASSWORD") }}'
-      user: alissacheng
-      password: dYdkuz-mupta4-qyjbaq
+      user: '{{ env_var("SNOWFLAKE_USERNAME") }}'
+      password: '{{ env_var("SNOWFLAKE_PASSWORD") }}'
       role: accountadmin
       schema: raw
       threads: 12
