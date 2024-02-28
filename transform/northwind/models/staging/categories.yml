@@ -1,0 +1,11 @@
+models:
+  - name: categories
+    columns:
+      - name: category_id
+        tests:
+          - unique
+          - not_null
+      - name: category_name
+        tests:
+          - unique
+          - not_null

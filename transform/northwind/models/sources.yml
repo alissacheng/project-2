@@ -6,7 +6,7 @@ sources:
     schema: raw
     tables:
       - name: products
-      - name: category
+      - name: categories
       - name: order_details
       - name: orders
       - name: customers
