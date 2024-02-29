@@ -2,7 +2,7 @@ northwind:
   target: dev 
   outputs:
     dev:
-      account: "{{ env_var('SNOWFLAKE_ACCOUNT_ID') }}"
+      account: nub74122.us-east-1
       database: warehouse_northwind      
       user: '{{ env_var("SNOWFLAKE_USERNAME") }}'
       password: '{{ env_var("SNOWFLAKE_PASSWORD") }}'

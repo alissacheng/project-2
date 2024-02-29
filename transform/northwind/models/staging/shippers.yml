@@ -1,0 +1,7 @@
+models:
+  - name: shippers
+    columns:
+      - name: shipper_id
+        tests:
+          - unique
+          - not_null

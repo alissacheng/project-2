@@ -1,0 +1,7 @@
+models:
+  - name: us_states
+    columns:
+      - name: state_id
+        tests:
+          - unique
+          - not_null
