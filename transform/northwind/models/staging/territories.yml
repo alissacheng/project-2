@@ -1,0 +1,7 @@
+models:
+  - name: territories
+    columns:
+      - name: territory_id
+        tests:
+          - unique
+          - not_null

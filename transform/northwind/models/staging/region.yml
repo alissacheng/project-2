@@ -1,0 +1,7 @@
+models:
+  - name: region
+    columns:
+      - name: region_id
+        tests:
+          - unique
+          - not_null

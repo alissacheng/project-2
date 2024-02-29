@@ -1,0 +1,9 @@
+models:
+  - name: employee_territories
+    columns:
+      - name: 
+        - employee_id
+        - territory_id
+        tests:
+          - unique
+          - not_null
