@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: fact_sale
+    description: |-
+      This table provides a dataset of all sales. 
+
+      **Grain:** Each row represents one sales order item.
+    columns:
+
+      - name: order_key
+        description: The surrogate key of the fact sales order
+        tests:
+          - not_null
+      
+      - name: product_key
+        description: The foreign key of the product
+        tests:
+          - not_null
+
+      - name: customer_key
+        description: The foreign key of the customer
+        tests:
+          - not_null
+
+      - name: ship_key
+        description: The foreign key of the shipper
+        tests:
+          - not_null
+      
+      - name: order_id
+        description: The natural key of the sales order
+        tests:
+          - not_null
+
+      - name: order_date
+        description: The date of the sales order
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: The unit price of the product 
+        tests:
+          - not_null
+
+      - name: quantity
+        description: The quantity of the product 
+        tests:
+          - not_null
+
+      - name: discount
+        description: The discount of the product
+        tests:
+          - not_null
+          - column_less_than:
+              value: 0.5
+
+      - name: revenue
+        description: The revenue obtained by multiplying unitprice and orderqty 
+
