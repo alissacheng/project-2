@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: fact_order
+    description: |-
+      This table provides a dataset of all orders. 
+
+      **Grain:** Each row represents one order made by a customer.
+    columns:
+
+      - name: order_key
+        description: The surrogate key of the fact order
+        tests:
+          - not_null
+          - unique
+      
+      - name: product_key
+        description: The foreign key of the product
+        tests:
+          - not_null
+
+      - name: customer_key
+        description: The foreign key of the customer
+        tests:
+          - not_null
+      
+      - name: order_id
+        description: The natural key of the order
+        tests:
+          - not_null
+
+      - name: order_date
+        description: The date of the order
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: The unit price of the product 
+        tests:
+          - not_null
+
+      - name: quantity
+        description: The quantity of the product 
+        tests:
+          - not_null
+
+      - name: discount
+        description: The discount of the product
+        tests:
+          - not_null
+
+      - name: revenue
+        description: The revenue obtained by multiplying unitprice and orderqty 
+

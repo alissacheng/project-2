@@ -21,11 +21,11 @@ order_details as (
 )
 
 select
-    {{ dbt_utils.generate_surrogate_key(['order_id']) }} as order_key,
+    {{ dbt_utils.generate_surrogate_key(['o.order_id']) }} as order_key,
     {{ dbt_utils.generate_surrogate_key(['product_id']) }} as product_key,
     {{ dbt_utils.generate_surrogate_key(['o.customer_id']) }} as customer_key,
     {{ dbt_utils.generate_surrogate_key(['o.ship_via']) }} as ship_key,
-    order_id,
+    o.order_id,
     o.order_date,
     unit_price,
     quantity,
@@ -33,4 +33,4 @@ select
     revenue
 from order_details
 inner join orders as o
-    on orders.order_id = order_details.order_id
+    on o.order_id = order_details.order_id

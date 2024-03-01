@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_shipper
+    columns:
+      
+      - name: shipper_id
+        description: The natural key of the shipper
+        tests:
+          - not_null
+
+      - name: company_name
+        description: The name of the shipper's company
+        tests:
+          - not_null
+
+      - name: phone
+        description: The phone numner of the shipper
+        tests:
+          - not_null
+
+      - name: total_orders_shipped
+        description: The total number of orders shipped by the shipper 
+
+      - name: total_freight_costs
+        description: The total dollar amount of freight costs paid to the shipper
+
+      - name: total_revenue_shipped
+        description: The total dollar amount of revenue shipped by the shipper 
+
+      - name: percent_sales_spent_on_freight
+        description: The percentage of sales spent on freight costs 
+

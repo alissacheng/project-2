@@ -34,6 +34,6 @@ select distinct
 
 from {{ ref('customers') }}
 join orders as o
-    on orders.customer_id = customers.customer_id
+    on o.customer_id = customers.customer_id
 join order_details as od
-    on od.order_id = orders.order_id
+    on od.order_id = o.order_id
