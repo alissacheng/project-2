@@ -8,6 +8,11 @@ models:
         description: The natural key of the shipper
         tests:
           - not_null
+      
+      - name: ship_key
+        description: The foreign key of the shipper
+        tests:
+          - not_null
 
       - name: company_name
         description: The name of the shipper's company

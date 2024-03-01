@@ -23,6 +23,11 @@ models:
         description: The foreign key of the customer
         tests:
           - not_null
+
+      - name: ship_key
+        description: The foreign key of the shipper
+        tests:
+          - not_null
       
       - name: order_id
         description: The natural key of the order

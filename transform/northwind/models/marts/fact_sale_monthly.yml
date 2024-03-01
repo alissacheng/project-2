@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: fact_sale_monthly
+    columns:
+      - name: sale_monthly_key
+        tests:
+          - not_null
+          - unique
+
+      - name: order_month_end_date
+        description: The foreign key of the order month end date
+        tests:
+          - not_null
+
+      - name: product_key
+        description: The foreign key of the product
+        tests:
+          - not_null
