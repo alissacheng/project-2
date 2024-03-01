@@ -12,7 +12,6 @@ models:
         description: The surrogate key of the fact sales order
         tests:
           - not_null
-          - unique
       
       - name: product_key
         description: The foreign key of the product

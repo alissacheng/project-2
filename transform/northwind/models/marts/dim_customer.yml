@@ -9,7 +9,7 @@ models:
           - unique
           - not_null
 
-      - name: customerid
+      - name: customer_id
         description: The natural key of the customer
         tests:
           - not_null
