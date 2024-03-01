@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: dim_product
+    columns:
+      - name: product_key
+        description: The surrogate key of the product
+        tests:
+          - not_null
+          - unique
+      - name: product_id
+        description: The natural key of the product
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        description: The product name
+        tests:
+          - not_null
+      - name: quantity_per_unit
+        description: The quantity per unit
+        tests:
+          - not_null
+      - name: unit_price
+        description: The unit price of the product
+        tests:
+          - not_null
+      - name: units_in_stock
+        description: The number of units in stock
+        tests:
+          - not_null
+      - name: units_on_order
+        description: The number of units on order
+        tests:
+          - not_null
+      - name: reorder_level
+        description: The level at which the product needs to be reordered to avoid going out of stock
+        tests:
+          - not_null
+      - name: discontinued
+        description: 1 means the product is discountued and 0 means it is not
+        tests:
+          - not_null
+      - name: category_name
+        description: The product's category name
+        tests:
+          - not_null
+      - name: category_description
+        description: The product's category description
+        tests:
+          - not_null
