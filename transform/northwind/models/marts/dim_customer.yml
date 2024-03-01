@@ -18,9 +18,10 @@ models:
       - name: company_name
         description: The company name
           - not_null
+          - unique
 
       - name: contact_name
-        description: The contact person's name
+        description: The company's contact person's name
           - not_null
 
       - name: contact_title
@@ -30,6 +31,7 @@ models:
       - name: address
         description: The customer's address
           - not_null
+          - unique
 
       - name: city
         description: The customer's city
@@ -49,6 +51,7 @@ models:
       - name: phone
         description: The customer's phone
           - not_null
+          - unique
       
       - name: fax
         description: The customer's fax

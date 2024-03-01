@@ -18,6 +18,7 @@ models:
         description: The name of the shipper's company
         tests:
           - not_null
+          - unique
 
       - name: phone
         description: The phone numner of the shipper

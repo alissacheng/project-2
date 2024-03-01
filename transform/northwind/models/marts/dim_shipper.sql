@@ -37,6 +37,6 @@ select
 from shippers
 left join orders as orders
     on orders.ship_via = shippers.shipper_id
-join order_details as od
+left join order_details as od
     on orders.order_id = od.order_id
 order by shipper_id

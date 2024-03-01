@@ -29,8 +29,8 @@ select distinct
     country,
     phone,
     fax,
-    count(o.order_id) over (partition by o.customer_id) as total_orders,
-    sum(od.revenue) over (partition by o.customer_id) as total_purchased
+    count(o.order_id) over (partition by o.customer_id) as total_orders_made,
+    sum(od.revenue) over (partition by o.customer_id) as total_dollars_spent
 
 from {{ ref('customers') }}
 join orders as o
