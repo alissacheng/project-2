@@ -42,10 +42,10 @@ models:
         tests:
           - not_null
       - name: category_name
-        description: The category name
+        description: The product's category name
         tests:
           - not_null
       - name: category_description
-        description: The category description
+        description: The product's category description
         tests:
           - not_null
