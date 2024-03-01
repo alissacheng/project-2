@@ -2,6 +2,10 @@ version: 2
 
 models:
   - name: fact_sale_monthly
+    description: |-
+      This table provides a dataset of all monthly sales. 
+
+      **Grain:** Each row represents the monthly sales  of a product.
     columns:
       - name: sale_monthly_key
         tests:
