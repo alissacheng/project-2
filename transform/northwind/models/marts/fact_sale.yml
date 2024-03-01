@@ -1,15 +1,15 @@
 version: 2
 
 models:
-  - name: fact_order
+  - name: fact_sale
     description: |-
-      This table provides a dataset of all orders. 
+      This table provides a dataset of all sales. 
 
-      **Grain:** Each row represents one order made by a customer.
+      **Grain:** Each row represents one sales order item.
     columns:
 
       - name: order_key
-        description: The surrogate key of the fact order
+        description: The surrogate key of the fact sales order
         tests:
           - not_null
           - unique
@@ -30,12 +30,12 @@ models:
           - not_null
       
       - name: order_id
-        description: The natural key of the order
+        description: The natural key of the sales order
         tests:
           - not_null
 
       - name: order_date
-        description: The date of the order
+        description: The date of the sales order
         tests:
           - not_null
 

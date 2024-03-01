@@ -10,7 +10,7 @@ models:
           - not_null
       
       - name: ship_key
-        description: The foreign key of the shipper
+        description: The surrogate key of the shipper
         tests:
           - not_null
 

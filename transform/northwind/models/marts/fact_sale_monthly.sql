@@ -3,9 +3,9 @@ select
     date.month_end_date as order_month_end_date,
     product_key,
     sum(revenue) as revenue
-from {{ ref('fact_order') }} as fa
+from {{ ref('fact_sales') }} as fs
 inner join {{ ref('dim_date') }} as date
-    on fa.order_date = date.date_day
+    on fs.order_date = date.date_day
 group by
     date.month_end_date,
     product_key
