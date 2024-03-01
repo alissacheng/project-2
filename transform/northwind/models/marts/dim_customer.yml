@@ -17,12 +17,16 @@ models:
 
       - name: company_name
         description: The company name
+        tests:
           - not_null
           - unique
 
       - name: contact_name
         description: The company's contact person's name
+        tests:
           - not_null
+          - min_word_count:
+              value: 2
 
       - name: contact_title
         description: The contact person's title in the company
@@ -30,8 +34,11 @@ models:
 
       - name: address
         description: The customer's address
+        tests:
           - not_null
           - unique
+          - min_word_count:
+              value: 2
 
       - name: city
         description: The customer's city

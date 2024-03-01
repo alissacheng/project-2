@@ -32,6 +32,8 @@ models:
         description: The natural key of the sales order
         tests:
           - not_null
+          - min_char_count:
+              value: 5
 
       - name: order_date
         description: The date of the sales order

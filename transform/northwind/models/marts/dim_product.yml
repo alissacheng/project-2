@@ -21,10 +21,14 @@ models:
         description: The quantity per unit
         tests:
           - not_null
+          - min_word_count:
+              value: 2
       - name: unit_price
         description: The unit price of the product
         tests:
           - not_null
+          - column_greater_than:
+              value: 1
       - name: units_in_stock
         description: The number of units in stock
         tests:
@@ -41,6 +45,8 @@ models:
         description: 1 means the product is discountued and 0 means it is not
         tests:
           - not_null
+          - accepted_values: 
+              values: [0, 1]
       - name: category_name
         description: The product's category name
         tests:

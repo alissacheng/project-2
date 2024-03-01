@@ -1,11 +1,3 @@
-with categories as (
-    select
-        category_id,
-        category_name,
-        description
-    from {{ ref('categories') }}
-)
-
 select
     {{ dbt_utils.generate_surrogate_key(['product_id']) }} as product_key,
     product_id,
