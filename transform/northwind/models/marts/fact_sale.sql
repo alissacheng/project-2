@@ -24,7 +24,7 @@ select
     {{ dbt_utils.generate_surrogate_key(['o.order_id']) }} as order_key,
     {{ dbt_utils.generate_surrogate_key(['product_id']) }} as product_key,
     {{ dbt_utils.generate_surrogate_key(['o.customer_id']) }} as customer_key,
-    {{ dbt_utils.generate_surrogate_key(['o.ship_via']) }} as ship_key,
+    {{ dbt_utils.generate_surrogate_key(['o.ship_via']) }} as shipper_key,
     o.order_id,
     o.order_date,
     unit_price,

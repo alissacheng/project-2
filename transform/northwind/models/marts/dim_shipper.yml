@@ -9,18 +9,18 @@ models:
         tests:
           - not_null
       
-      - name: ship_key
+      - name: shipper_key
         description: The surrogate key of the shipper
         tests:
           - not_null
 
-      - name: company_name
+      - name: shipper_company_name
         description: The name of the shipper's company
         tests:
           - not_null
           - unique
 
-      - name: phone
+      - name: shipper_phone
         description: The phone numner of the shipper
         tests:
           - not_null

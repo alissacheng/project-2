@@ -23,7 +23,7 @@ models:
           - not_null
           - min_word_count:
               value: 2
-      - name: unit_price
+      - name: product_unit_price
         description: The unit price of the product
         tests:
           - not_null

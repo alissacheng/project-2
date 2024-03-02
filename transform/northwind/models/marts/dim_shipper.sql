@@ -26,10 +26,10 @@ shippers as (
 
 select
     distinct
-    {{ dbt_utils.generate_surrogate_key(['shipper_id']) }} as ship_key,
+    {{ dbt_utils.generate_surrogate_key(['shipper_id']) }} as shipper_key,
     shipper_id,
-    company_name,
-    phone,
+    company_name as shipper_company_name,
+    phone as shipper_phone,
     count(orders.order_id) over (partition by shipper_id) as total_orders_shipped,
     sum(orders.freight) over (partition by shipper_id) as total_freight_costs,
     sum(od.revenue) over (partition by shipper_id) as total_revenue_shipped,
