@@ -1,3 +1,4 @@
+-- incremental approach with delete + insert
 {{
     config(
         materialized="incremental",

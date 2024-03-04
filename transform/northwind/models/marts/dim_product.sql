@@ -1,3 +1,6 @@
+--Brings together products along with category information
+--AS utilized to alias fields
+
 select
     {{ dbt_utils.generate_surrogate_key(['product_id']) }} as product_key,
     product_id,

@@ -1,3 +1,6 @@
+--One big table using dimension tables
+-- utilizes dbt utils star for easy column excluding
+-- surrogate keys for prodict, customer, shipper ids
 select
     {{ dbt_utils.star(from=ref('fact_sale'), relation_alias='fact_sale', except=[
         "product_key", "customer_key", "shipper_key", "date_day"

@@ -1,3 +1,4 @@
+--Utilizes DBT Get Date to pull all dates and previous period dates as a table
 {{ dbt_date.get_date_dimension(
         start_date="1996-01-01",
         end_date=run_started_at.strftime("%Y-%m-%d")

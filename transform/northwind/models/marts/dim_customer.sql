@@ -1,3 +1,4 @@
+--CTE for Orders and Order details 
 with orders as (
     select
         order_id,
@@ -16,6 +17,10 @@ order_details as (
     from {{ ref('order_details') }}
 )
 
+--Pulling a distinct list of orders and details using surrogate key for customer id
+--utilizes window function for counting orders per customer
+--utilizes window function for sum of revenue per customer
+--AS utilized to alias fields
 select distinct
     {{ dbt_utils.generate_surrogate_key(['o.customer_id']) }} as customer_key,
     o.customer_id,
