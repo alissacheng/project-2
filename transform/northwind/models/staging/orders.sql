@@ -12,7 +12,7 @@ select
     ship_via,
     ship_city,
     ship_name,
-    order_date,
+    cast(order_date as date) as order_date,
     customer_id,
     employee_id,
     ship_region,
@@ -21,7 +21,7 @@ select
     shipped_date,
     required_date,
     ship_postal_code,
-    _airbyte_extracted_at as last_update
+    cast(_airbyte_extracted_at as datetime) as last_update
     
 from {{ source('northwind', 'orders') }}
 

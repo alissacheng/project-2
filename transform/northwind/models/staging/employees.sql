@@ -25,7 +25,7 @@ REPORTS_TO,
 EMPLOYEE_ID,
 POSTAL_CODE,
 TITLE_OF_COURTESY,
-_airbyte_extracted_at as LAST_UPDATE
+cast(_airbyte_extracted_at as datetime) as last_update
     
 from {{ source('northwind', 'employees') }}
 
