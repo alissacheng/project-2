@@ -1,7 +1,8 @@
 {{
     config(
-        materialized="table",
-        unique_key=["order_id"]
+        materialized="incremental",
+        unique_key=["order_id"],
+        incremental_strategy="delete+insert"
     )
 }}
 
@@ -19,6 +20,11 @@ select
     ship_country,
     shipped_date,
     required_date,
-    ship_postal_code
+    ship_postal_code,
+    _airbyte_extracted_at as last_update
     
 from {{ source('northwind', 'orders') }}
+
+{% if is_incremental() %}
+    where last_update > (select max(last_update) from {{ this }} )
+{% endif %}
