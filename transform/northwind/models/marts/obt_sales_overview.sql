@@ -1,3 +1,6 @@
+-- Manual One Big Table using staging tables
+-- surrogate keys on order, customer, product, supplier, and category ids
+
 select
     {{ dbt_utils.generate_surrogate_key(['o.order_id']) }} as order_key,
     {{ dbt_utils.generate_surrogate_key(['o.customer_id']) }} as customer_key,
@@ -23,6 +26,7 @@ select
     s.company_name as supplier_name,
     cu.company_name as customer_name
 
+--ordered by order date for efficient micro partitioning
 from {{ ref('orders') }} as o
     join {{ ref('order_details') }} as od 
         on o.order_id = od.order_id

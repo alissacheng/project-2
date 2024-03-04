@@ -1,3 +1,6 @@
+--Surrogate key used for product id
+-- mothly roll up of revenue by product
+
 select
     {{ dbt_utils.generate_surrogate_key(["date.month_end_date", "product_key"]) }} as sale_monthly_key,
     date.month_end_date as order_month_end_date,

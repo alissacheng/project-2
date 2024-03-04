@@ -1,3 +1,5 @@
+-- CTE for Orders, Order details, and Shippers utilized to create dim table
+
 with orders as (
     select
         ship_via,
@@ -24,6 +26,10 @@ shippers as (
     from {{ ref('shippers') }}
 )
 
+--Surrogate key for shipper ID
+--Window functions for Count of orders, and Sum of Freight by shipper
+--row level calculation added for percent sales spent on freight
+-- left join on orders to not drop off any shippers with no orders
 select
     distinct
     {{ dbt_utils.generate_surrogate_key(['shipper_id']) }} as shipper_key,
