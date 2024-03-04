@@ -17,7 +17,7 @@ select
     units_in_stock,
     units_on_order,
     quantity_per_unit,
-    _airbyte_extracted_at as last_update
+    cast(_airbyte_extracted_at as datetime) as last_update
     
 from {{ source('northwind', 'products') }}
 

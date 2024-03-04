@@ -9,7 +9,7 @@
 select
     REGION_ID,
     REGION_DESCRIPTION,
-    _airbyte_extracted_at as LAST_UPDATE
+    cast(_airbyte_extracted_at as datetime) as last_update
     
 from {{ source('northwind', 'region') }}
 

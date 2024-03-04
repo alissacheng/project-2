@@ -9,7 +9,7 @@
 select
 EMPLOYEE_ID,
 TERRITORY_ID,
-_airbyte_extracted_at as LAST_UPDATE
+cast(_airbyte_extracted_at as datetime) as last_update
     
 from {{ source('northwind', 'employee_territories') }}
 

@@ -18,7 +18,7 @@ select
     company_name,
     contact_name,
     contact_title,
-    _airbyte_extracted_at as last_update
+    cast(_airbyte_extracted_at as datetime) as last_update
     
 from {{ source('northwind', 'customers') }}
 

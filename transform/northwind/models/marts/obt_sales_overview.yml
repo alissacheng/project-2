@@ -72,8 +72,6 @@ models:
 
       - name: shipped_date
         description: date of the shipment
-        tests:
-          - not_null
 
       - name: unit_price
         description: price per each

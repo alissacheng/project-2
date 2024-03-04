@@ -9,7 +9,7 @@
 select
     customer_type_id,
     customer_desc,
-    _airbyte_extracted_at as last_update
+    cast(_airbyte_extracted_at as datetime) as last_update
     
 from {{ source('northwind', 'customer_demographics') }}
 

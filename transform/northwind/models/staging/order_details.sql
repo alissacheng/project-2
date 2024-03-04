@@ -12,7 +12,7 @@ select
     quantity,
     product_id,
     unit_price,
-    _airbyte_extracted_at as last_update
+    cast(_airbyte_extracted_at as datetime) as last_update
     
 from {{ source('northwind', 'order_details') }}
 

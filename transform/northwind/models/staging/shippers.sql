@@ -10,7 +10,7 @@ select
     PHONE,
     SHIPPER_ID,
     COMPANY_NAME,
-    _airbyte_extracted_at as last_update
+    cast(_airbyte_extracted_at as datetime) as last_update
     
 from {{ source('northwind', 'shippers') }}
 
