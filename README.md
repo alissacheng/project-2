@@ -74,11 +74,13 @@ Accompanying presentation [here](docs/northwind.pdf)
 
 3. Create a new repository in ECR
 
-4. Click on your new repository in ECR and click on `View push commands` and follow the instructions do the following:
+4. Click on your new repository in ECR and click on `View push commands` and follow the instructions listed to do the following:
     - Login to your ECR in your terminal using AWS CLI:
         - `aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <your-account-id>.dkr.ecr.<your-region>.amazonaws.com`
     - Build your docker image
-        - `docker build -t <image-name> .`
+        - `docker build -t <your-repository-name> .`
+    - Tag your docker image
+        -`docker tag <your-repository-name>:<tag> <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/<your-repository-name>:<tag>`
     - Push your docker image into your repository
         - `docker push <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/<your-repository-name>:<tag>`
 
