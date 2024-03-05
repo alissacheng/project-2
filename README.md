@@ -5,9 +5,19 @@
 ![dbt](https://img.shields.io/badge/dbt-transform-blue)
 ![snowflake](https://img.shields.io/badge/snowflake-database-blue)
 
-## Introduction 
+## Project Context 
 
-This is a demo project to create an ELT pipeline using airbyte, dbt, snowflake and AWS. 
+To help Northwind Store track orders, shipments, inventory and customer information with an ELT pipeline
+
+### Goals
+1. Business solutions relating to revenue, inventory level, shipment costs, order volume
+2. This data pipeline would be valuable to Northwind to increase efficiency and lower costs
+
+This ELT pipeline uses airbyte, dbt, snowflake and AWS. The architecture diagram below outlines how the ELT pipeline works:
+1. A source SQL file is loaded into PostgreSQL
+2. Airbyte will extract the data from PostgreSQL and load it into Snowflake
+3. DBT will take the raw data from Snowflake and transform it 
+4. Using Power BI, we will then take that transformed data and create a semantic layer & visualizations
 
 ![docs/elt-architecture.png](docs/elt-architecture.png)
 
@@ -15,7 +25,7 @@ This is a demo project to create an ELT pipeline using airbyte, dbt, snowflake a
 - [dbt](https://docs.getdbt.com/docs/introduction)
 - [snowflake](https://docs.snowflake.com/en/)
 
-Accompanying presentation [here](docs/northwind.pdf)
+Accompanying project presentation [here](docs/northwind.pdf)
 
 ## Getting started 
 
