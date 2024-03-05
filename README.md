@@ -18,6 +18,7 @@ This ELT pipeline uses airbyte, dbt, snowflake and AWS. The architecture diagram
 2. Airbyte will extract the data from PostgreSQL and load it into Snowflake
 3. DBT will take the raw data from Snowflake and transform it 
 4. Using Power BI, we will then take that transformed data and create a semantic layer & visualizations
+5. Docker is used to build an image of the solution and AWS will deploy the solution
 
 ![docs/elt-architecture.png](docs/elt-architecture.png)
 
