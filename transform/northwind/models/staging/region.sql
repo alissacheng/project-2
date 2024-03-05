@@ -1,3 +1,21 @@
+-- Region Incremental Model
+-- This dbt model represents an incremental view for the 'region' source in the 'northwind' database.
+
+-- Configuration:
+-- - Materialized: Incremental
+-- - Unique Key: ['region_id']
+-- - Incremental Strategy: Delete + Insert
+
+-- Columns:
+-- - region_id: The unique identifier for each region.
+-- - region_description: The description of the region.
+-- - last_update: The timestamp of the last data extraction from the source.
+
+-- Usage:
+-- Include this code in your dbt project to create an incremental view of 'region'.
+-- Adjust the unique key and incremental strategy based on your specific requirements.
+
+
 {{
     config(
         materialized="incremental",

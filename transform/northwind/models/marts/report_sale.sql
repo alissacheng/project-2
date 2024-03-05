@@ -1,3 +1,5 @@
+-- Select relevant columns from the fact_sale table
+
 select
     {{ dbt_utils.star(from=ref('fact_sale'), relation_alias='fact_sale', except=[
         "product_key", "customer_key", "shipper_key", "date_day"

@@ -1,3 +1,23 @@
+-- Order and Order Details Join
+-- This dbt model joins the 'orders' and 'order_details' tables to create a consolidated view of order-related information.
+
+-- Columns:
+-- order_key: A surrogate key generated using 'dbt_utils.generate_surrogate_key' for order records.
+-- product_key: A surrogate key generated using 'dbt_utils.generate_surrogate_key' for product records.
+-- customer_key: A surrogate key generated using 'dbt_utils.generate_surrogate_key' for customer records.
+-- shipper_key: A surrogate key generated using 'dbt_utils.generate_surrogate_key' for shipper records.
+-- order_id: The unique identifier for each order.
+-- order_date: The date when the order was placed.
+-- unit_price: The price per unit of the product.
+-- quantity: The quantity of products ordered.
+-- discount: The discount applied to the order.
+-- revenue: The total revenue generated from the order.
+
+-- Usage:
+-- Include this code in your dbt project to create a consolidated view of order-related information.
+-- Adjust the columns selected based on your specific reporting requirements.
+
+-- Define a CTE 'orders' to select relevant information from the 'orders' table
 with orders as (
     select
         order_id,
@@ -9,6 +29,7 @@ with orders as (
     from {{ ref('orders') }}
 ),
 
+-- Define a CTE 'order_details' to calculate revenue based on 'order_details' table
 order_details as (
     select
         order_id,
@@ -20,6 +41,7 @@ order_details as (
     from {{ ref('order_details') }}
 )
 
+-- Final SELECT statement combining information from 'orders' and 'order_details'
 select
     {{ dbt_utils.generate_surrogate_key(['o.order_id']) }} as order_key,
     {{ dbt_utils.generate_surrogate_key(['product_id']) }} as product_key,

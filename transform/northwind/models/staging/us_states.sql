@@ -1,3 +1,23 @@
+-- US States Incremental Model
+-- This dbt model represents an incremental view for the 'us_states' source in the 'northwind' database.
+
+-- Configuration:
+-- - Materialized: Incremental
+-- - Unique Key: ['STATE_ID']
+-- - Incremental Strategy: Delete + Insert
+
+-- Columns:
+-- - STATE_ID: The unique identifier for each US state.
+-- - STATE_ABBR: The abbreviation of the state.
+-- - STATE_NAME: The full name of the state.
+-- - STATE_REGION: The region to which the state belongs.
+-- - LAST_UPDATE: The timestamp of the last data extraction from the source.
+
+-- Usage:
+-- Include this code in your dbt project to create an incremental view of 'us_states'.
+-- Adjust the unique key and incremental strategy based on your specific requirements.
+
+
 {{
     config(
         materialized="incremental",
