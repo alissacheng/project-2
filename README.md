@@ -66,22 +66,24 @@ Accompanying presentation [here](docs/northwind.pdf)
 
 ## Using AWS to deploy solution
 
-1. Log in to ECR using the AWS CLI
-    - `aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <your-account-id>.dkr.ecr.<your-region>.amazonaws.com`
-
-2. cd into `transform` folder and build the docker image with the following command:
+1. cd into `transform` folder and build the docker image locally with the following command:
     - `docker build -t <your-image-name> .`
 
-3. Tag your docker image
-    - `docker tag <your-image-name>:<tag> <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/<your-repository-name>:<tag>`
+2. Run the docker image locally to test that it is working
+    - `docker run -e SNOWFLAKE_USERNAME=<snowflake-username> -e SNOWFLAKE_PASSWORD=<snowflake-password> -e SNOWFLAKE_ACCOUNT_ID=<snowflake-account-id> <your-image-name>`
 
-4. Push Docker Image to ECR
-    - `docker push <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/<your-repository-name>:<tag>`
+3. Create a new repository in ECR
 
-5. Login to your AWS console
+4. Click on your new repository in ECR and click on `View push commands` and follow the instructions do the following:
+    - Login to your ECR in your terminal using AWS CLI:
+        - `aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <your-account-id>.dkr.ecr.<your-region>.amazonaws.com`
+    - Build your docker image
+        - `docker build -t <image-name> .`
+    - Push your docker image into your repository
+        - `docker push <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/<your-repository-name>:<tag>`
 
-6. Set Up ECS Cluster
+5. Set Up an ECS Cluster
 
-7. Create ECS Task Definition and add Snowflake environment variables
+6. Create ECS Task Definition and add Snowflake environment variables
 
-5. Create a new task using the cluster and task definition from steps 5 & 6 and schedule/run the task accordingly
+7. Create a new task using the cluster and task definition from steps 5 & 6 and schedule/run the task accordingly
