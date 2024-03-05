@@ -62,3 +62,13 @@ models:
       
       - name: fax
         description: The customer's fax
+
+      - name: total_orders_made
+        description: The total number of orders made
+          - not_null
+          - unique
+
+      - name: total_dollars_spent
+        description: The total amount of money spent on orders
+          - not_null
+          - unique

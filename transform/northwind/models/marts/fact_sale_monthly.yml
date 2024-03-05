@@ -5,9 +5,10 @@ models:
     description: |-
       This table provides a dataset of all monthly sales. 
 
-      **Grain:** Each row represents the monthly sales  of a product.
+      **Grain:** Each row represents the monthly sales of a product.
     columns:
       - name: sale_monthly_key
+        description: The surrogate key of the monthly sale
         tests:
           - not_null
           - unique
@@ -19,5 +20,10 @@ models:
 
       - name: product_key
         description: The foreign key of the product
+        tests:
+          - not_null
+
+      - name: revenue
+        description: The monthly revenue
         tests:
           - not_null

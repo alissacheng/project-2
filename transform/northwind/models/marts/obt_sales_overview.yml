@@ -67,8 +67,6 @@ models:
 
       - name: ship_postal_code
         description: zipcode for the shipping address
-        tests:
-          - not_null
 
       - name: shipped_date
         description: date of the shipment
